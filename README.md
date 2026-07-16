@@ -1,358 +1,106 @@
-# 🌱 Plant Disease Detection Using Deep Learning and Generative AI
+# 🌿 AI Plant Disease Detection System
 
-## 📌 Project Overview
-
-Plant diseases are one of the major challenges affecting agricultural productivity and crop quality. Early identification of diseases helps farmers take timely preventive actions and reduce crop losses.
-
-This project develops an **AI-powered Plant Disease Detection System** using **Deep Learning and Generative AI**. The system analyzes plant leaf images and classifies them into different disease categories using multiple deep learning models.
-
-Four deep learning models were developed and compared:
-
-- Custom CNN
-- ResNet50
-- EfficientNetB0
-- MobileNetV2
-
-The best-performing model is integrated into a **Streamlit web application** for real-time plant disease prediction.
-
-A **Generative AI module using Hugging Face Transformers** is integrated to provide:
-
-- Disease explanation
-- Symptoms
-- Possible causes
-- Treatment recommendations
-- Prevention methods
-
-The final application allows users to upload a plant leaf image and receive disease prediction along with AI-generated agricultural guidance.
+An AI-powered web application for detecting plant leaf diseases using Deep Learning and providing AI-generated disease analysis and treatment recommendations. The application is built using **TensorFlow**, **Streamlit**, and the **Hugging Face Inference API**.
 
 ---
 
-# 🎯 Objectives
+# 📌 Features
 
-- Detect plant diseases automatically from leaf images.
-- Build a custom CNN model for image classification.
-- Implement transfer learning models.
-- Compare different deep learning architectures.
-- Select the best-performing model for deployment.
-- Integrate Generative AI for disease-related recommendations.
-- Develop an interactive Streamlit application.
-
----
-
-# 🏗️ Project Workflow
-
-```
-Leaf Image Upload
-        |
-        ↓
-Image Preprocessing
-        |
-        ↓
-Deep Learning Models
-(CNN / ResNet50 / EfficientNetB0 / MobileNetV2)
-        |
-        ↓
-Disease Classification
-        |
-        ↓
-Confidence Score
-        |
-        ↓
-Hugging Face Generative AI
-        |
-        ↓
-Disease Explanation
-Treatment & Prevention Advice
-        |
-        ↓
-Streamlit Application
-```
+- 🌱 Detects plant leaf diseases from uploaded leaf images
+- 🧠 Deep Learning-based disease classification
+- ⚡ Transfer Learning using CNN, ResNet50, MobileNetV2, and EfficientNetB0
+- 🤖 AI-generated disease description and treatment recommendations using Hugging Face
+- 📊 Model comparison and evaluation
+- 🖥️ Interactive Streamlit web application
 
 ---
 
-# 📂 Dataset
-
-## Dataset Used
-
-**New Plant Diseases Dataset (Augmented)**
-
-The dataset contains multiple categories of healthy and diseased plant leaf images.
-
-Dataset includes:
-
-- Healthy leaves
-- Diseased leaves
-- Multiple crop categories
-- Multiple disease classes
-
----
-
-# 🔄 Data Preprocessing
-
-The following preprocessing techniques were applied:
-
-- Image resizing
-- Pixel normalization
-- Data augmentation
-- Label encoding
-- Training and validation split
-
----
-
-# 🛠️ Technologies Used
-
-## Programming Language
-
-- Python
-
-## Deep Learning Framework
-
-- TensorFlow
-- Keras
-
-## Machine Learning Libraries
-
-- NumPy
-- Pandas
-- Scikit-learn
-- Matplotlib
-- OpenCV
-
-## Generative AI
-
-- Hugging Face Transformers
-- Qwen2.5-7B-Instruct
-
-## Deployment
-
-- Streamlit
-
-## Development Tools
-
-- VS Code
-- Jupyter Notebook
-- Google Colab
-
----
-
-# 🧠 Deep Learning Models
-
-## 1. Custom CNN Model
-
-A Convolutional Neural Network was developed as a baseline model.
-
-Architecture:
-
-- Conv2D Layers
-- MaxPooling Layers
-- Dropout
-- Flatten Layer
-- Dense Layers
-- Softmax Output Layer
-
----
-
-## 2. ResNet50
-
-Transfer learning model using residual connections to extract deep image features.
-
-Advantages:
-
-- Better feature extraction
-- Handles deeper networks
-- Reduces vanishing gradient problems
-
----
-
-## 3. EfficientNetB0
-
-A lightweight transfer learning architecture designed to balance:
-
-- Accuracy
-- Model size
-- Computational efficiency
-
----
-
-## 4. MobileNetV2
-
-A lightweight deep learning model optimized for faster inference and deployment.
-
-Advantages:
-
-- Low computational cost
-- Suitable for real-time applications
-- Faster prediction speed
-
----
-
-# 📊 Model Evaluation
-
-The models were evaluated using:
-
-- Accuracy
-- Precision
-- Recall
-- F1 Score
-- Confusion Matrix
-
-
-| Model | Accuracy |
-|------|----------|
-| CNN | 92.90% |
-| ResNet50 | 15.55% |
-| EfficientNetB0 | 2.86% |
-| MobileNetV2 | 92.43% |
-
-
-## Final Model Selection
-
-Based on evaluation results:
-
-**CNN achieved the highest accuracy and was selected as the primary deployment model.**
-
-MobileNetV2 was also evaluated because of its lightweight architecture suitable for deployment.
-
----
-
-# 🤖 Generative AI Integration
-
-After disease classification, the predicted disease name is passed to a Hugging Face Large Language Model.
-
-## LLM Used
-
-**Qwen2.5-7B-Instruct**
-
-The Generative AI module provides:
-
-- Disease overview
-- Symptoms
-- Causes
-- Treatment recommendations
-- Prevention strategies
-
-
-Example:
-
-```
-Disease: Tomato Early Blight
-
-Overview:
-A fungal disease affecting tomato plants.
-
-Symptoms:
-- Brown spots on leaves
-- Yellowing of foliage
-
-Treatment:
-- Remove infected leaves
-- Apply suitable fungicides
-
-Prevention:
-- Maintain proper spacing
-- Avoid excess moisture
-```
-
----
-
-# 🚀 Streamlit Application Features
-
-The application provides:
-
-✅ Upload plant leaf image  
-✅ Automatic disease prediction  
-✅ Confidence score display  
-✅ AI-generated disease explanation  
-✅ Treatment recommendations  
-✅ Prevention guidelines  
-
----
-
-# 📁 Project Structure
-
-```
-Plant-Disease-Detection
+# 📂 Project Structure
+
+```text
+Plant-Disease-Detection/
+│
+├── Screenshots/
+│   ├── Home.png
+│   ├── Upload Leaf.png
+│   ├── Prediction Result.png
+│   ├── AI Recommendation.png
+│   ├── AI Recommendation 2.png
+│   └── Model Information.png
 │
 ├── app.py
-│
-├── Model Evaluation.ipynb
-│
-├── HuggingFace.ipynb
-│
-├── models
-│   │
-│   ├── cnn_model.keras
-│   ├── resnet50_final.keras
-│   ├── efficientnet_final.keras
-│   └── mobilenet_final.keras
-│
 ├── class_names.pkl
-│
-├── sample_images
-│
-├── screenshots
-│   ├── home_page.png
-│   ├── prediction_result.png
-│   └── ai_response.png
-│
+├── efficientnet_final.keras
+├── mobilenet_final.keras
+├── HuggingFace.ipynb
+├── Model Evaluation.ipynb
+├── Plant.ipynb
+├── Plant_Disease_Transfer_Learning_MobileNet_ResNet.ipynb
+├── model_comparison.csv
 ├── requirements.txt
-│
+├── .gitignore
+├── Report.pdf
 └── README.md
 ```
 
 ---
 
-# 📸 Application Screenshots
+# 🛠️ Technologies Used
 
-## 1. Streamlit Home Page
+- Python
+- TensorFlow / Keras
+- Streamlit
+- NumPy
+- Pillow (PIL)
+- Hugging Face Inference API
+- Pickle
 
-(Add screenshot here)
+---
+
+# 🧠 Deep Learning Models
+
+| Model | Purpose |
+|--------|---------|
+| CNN | Baseline Model |
+| ResNet50 | Transfer Learning |
+| MobileNetV2 | Transfer Learning |
+| EfficientNetB0 | Best Performing Model |
+
+---
+
+# 📈 Model Evaluation
+
+The project compares multiple Deep Learning models based on validation accuracy and overall performance.
+
+The detailed comparison is available in:
 
 ```
-screenshots/home_page.png
+model_comparison.csv
 ```
 
 ---
 
-## 2. Leaf Image Upload and Prediction
+# 🚀 Installation
 
-(Add screenshot here)
-
-```
-screenshots/prediction_result.png
-```
-
----
-
-## 3. Generative AI Disease Explanation
-
-(Add screenshot here)
-
-```
-screenshots/ai_response.png
-```
-
----
-
-# ▶️ How to Run the Project
-
-## Step 1: Clone Repository
+Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/harini0905/AI-Plant-Disease-Detection.git
 ```
 
----
+Move to the project folder
 
-## Step 2: Install Dependencies
+```bash
+cd AI-Plant-Disease-Detection
+```
+
+Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-## Step 3: Run Streamlit Application
+Run the Streamlit application
 
 ```bash
 streamlit run app.py
@@ -360,50 +108,78 @@ streamlit run app.py
 
 ---
 
-## Step 4: Upload Leaf Image
+# 📷 Streamlit Application Screenshots
 
-Upload a plant leaf image and get:
+## 🏠 Home Page
 
-- Predicted disease
-- Confidence score
-- AI-generated explanation
-- Treatment and prevention recommendations
+<img src="Screenshots/Home.png" width="80%">
 
 ---
 
-# 📌 Results
+## 📤 Upload Leaf Image
 
-The project successfully combines:
-
-### Computer Vision
-
-Deep learning models identify plant diseases from leaf images.
-
-### Transfer Learning
-
-Pre-trained architectures improve feature extraction and comparison.
-
-### Generative AI
-
-Provides human-friendly explanations and agricultural recommendations.
-
-The system demonstrates how Artificial Intelligence can support faster plant disease identification and decision-making.
+<img src="Screenshots/Upload Leaf.png" width="80%">
 
 ---
 
-# 🔮 Future Enhancements
+## 🔍 Disease Prediction Result
 
-- Mobile application development
+<img src="Screenshots/Prediction Result.png" width="80%">
+
+---
+
+## 🤖 AI Recommendation - Disease Analysis
+
+<img src="Screenshots/AI Recommendation.png" width="80%">
+
+---
+
+## 💊 AI Recommendation - Treatment & Prevention
+
+<img src="Screenshots/AI Recommendation 2.png" width="80%">
+
+---
+
+## 📊 Model Information
+
+<img src="Screenshots/Model Information.png" width="80%">
+
+---
+
+# 📂 Dataset
+
+The dataset used in this project is the **New Plant Diseases Dataset (Augmented)** obtained from **Kaggle**.
+
+> Dataset Link: https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset
+
+---
+
+## 📂 Model Files
+
+Due to GitHub file size limitations, trained deep learning models are stored in Google Drive.
+
+You can download the model files here:
+
+🔗 [Download Models from Google Drive](https://drive.google.com/drive/folders/1zPc-vFmNNJCk-UeN3L2xAlO4ia-I5D6J?usp=sharing)
+
+---
+
+# 📌 Future Enhancements
+
+- Deploy using Streamlit Cloud
+- Mobile application integration
 - Real-time camera-based disease detection
-- Support for more plant varieties
-- Multi-language farmer assistance
-- Integration with agricultural databases
-- Cloud deployment
+- Disease severity estimation
+- Support for additional crop species
+- Multi-language support
 
 ---
 
 # 👩‍💻 Author
 
-## A Harini
+**A. Harini**
 
-Aspiring Data Scientist | Deep Learning | Generative AI | Python
+Aspiring Data Scientist
+
+
+---
