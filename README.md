@@ -15,6 +15,34 @@ An AI-powered web application for detecting plant leaf diseases using Deep Learn
 
 ---
 
+# 🤖 Hugging Face Generative AI Integration
+
+The project integrates Hugging Face Generative AI to provide detailed disease information and treatment recommendations after plant disease prediction.
+
+The predicted disease from the deep learning model is passed to a Large Language Model (LLM), which generates:
+
+- Disease Overview
+- Symptoms
+- Causes
+- Recommended Treatment
+- Prevention Tips
+
+The generated response is designed to be simple and farmer-friendly.
+
+---
+
+## 🔑 API Configuration
+
+The Hugging Face API key is securely loaded using environment variables.
+
+Required package:
+
+```bash
+pip install python-dotenv huggingface_hub
+
+---
+
+
 # 📂 Project Structure
 
 ```text
@@ -22,7 +50,7 @@ Plant-Disease-Detection/
 │
 ├── Screenshots/
 │   ├── Home.png
-│   ├── Upload Leaf.png
+│   ├── Upload Image.png
 │   ├── Prediction Result.png
 │   ├── AI Recommendation.png
 │   ├── AI Recommendation 2.png
@@ -116,9 +144,9 @@ streamlit run app.py
 
 ---
 
-## 📤 Upload Leaf Image
+## 📤 Upload Image
 
-<img src="Screenshots/Upload Leaf.png" width="80%">
+<img src="Screenshots/Upload Image.png" width="80%">
 
 ---
 
@@ -151,6 +179,17 @@ streamlit run app.py
 The dataset used in this project is the **New Plant Diseases Dataset (Augmented)** obtained from **Kaggle**.
 
 > Dataset Link: https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset
+
+---
+
+## 🖥️ Training Environment
+
+The models were trained using different environments based on computational requirements.
+
+- **CNN Baseline Model** and **EfficientNetB0 Transfer Learning Model** were trained locally using Visual Studio Code.
+- **ResNet50** and **MobileNetV2 Transfer Learning Models** were trained using GPU acceleration in Google Colab to handle the higher computational requirements of deep learning training.
+
+After training, the best-performing models were saved and integrated into the Streamlit application for real-time plant disease prediction.
 
 ---
 
