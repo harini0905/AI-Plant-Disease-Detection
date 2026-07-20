@@ -39,6 +39,7 @@ Required package:
 
 ```bash
 pip install python-dotenv huggingface_hub
+```
 
 ---
 
