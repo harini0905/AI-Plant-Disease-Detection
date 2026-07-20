@@ -58,7 +58,6 @@ Plant-Disease-Detection/
 │
 ├── app.py
 ├── class_names.pkl
-├── efficientnet_final.keras
 ├── mobilenet_final.keras
 ├── HuggingFace.ipynb
 ├── Model Evaluation.ipynb
@@ -195,7 +194,10 @@ After training, the best-performing models were saved and integrated into the St
 
 ## 📂 Model Files
 
-Due to GitHub file size limitations, trained deep learning models are stored in Google Drive.
+Due to GitHub file size limitations, 
+  1.CNN
+  2.ResNet50
+  3.EfficientNetB0   models are stored in Google Drive.
 
 You can download the model files here:
 

@@ -61,14 +61,14 @@ and receive AI-generated treatment recommendations.
 
 
 # ============================
-# LOAD CNN MODEL
+# LOAD ResNet50 MODEL
 # ============================
 
 @st.cache_resource
 def load_model():
 
     model = tf.keras.models.load_model(
-        "cnn_model.keras"
+        "resnet50_best.keras"
     )
 
     return model
@@ -100,11 +100,6 @@ def load_class_names():
 class_names = load_class_names()
 
 
-
-
-
-
-
 # ============================
 # SIDEBAR
 # ============================
@@ -130,7 +125,7 @@ menu = st.sidebar.radio(
 
 if menu == "🏠 Home":
 
-    st.success("✅ CNN Model Loaded Successfully")
+    st.success("✅ ResNet50 Model Loaded Successfully")
     st.success(f"✅ Total Disease Classes : {len(class_names)}")
 
     st.header(
@@ -139,7 +134,7 @@ if menu == "🏠 Home":
 
 
     st.write("""
-This application detects plant diseases using a CNN Deep Learning
+This application detects plant diseases using a ResNet50 Deep Learning
 model and provides AI-generated disease explanations using
 Hugging Face Large Language Models.
 """)
@@ -150,7 +145,7 @@ Hugging Face Large Language Models.
 
     st.markdown("""
 - 🌱 Upload plant leaf image
-- 🧠 CNN-based disease classification
+- 🧠 ResNet50-based disease classification
 - 📊 Confidence score prediction
 - 🤖 Hugging Face AI explanation
 - 🌿 Treatment recommendations
@@ -208,23 +203,16 @@ elif menu == "🔍 Predict Disease":
 
                 # Image preprocessing
 
+                from tensorflow.keras.applications.resnet50 import preprocess_input
+
                 img = image.convert("RGB")
+                img = img.resize((224, 224))
 
-                img = img.resize(
-                    (224,224)
-                )
+                img_array = np.array(img, dtype=np.float32)
 
+                img_array = np.expand_dims(img_array, axis=0)
 
-                img_array = np.array(img)
-
-
-                img_array = img_array / 255.0
-
-
-                img_array = np.expand_dims(
-                    img_array,
-                    axis=0
-                )
+                img_array = preprocess_input(img_array)
 
 
 
@@ -393,7 +381,7 @@ Use simple farmer-friendly language.
 
             st.write("""
 
-**Deployment Model:** CNN
+**Deployment Model:** ResNet50
 
 
 **Models Compared:**
@@ -473,7 +461,7 @@ Leaf Image
 ↓
 Image Processing
 ↓
-CNN Prediction
+ResNet50 Prediction
 ↓
 Disease Name
 ↓

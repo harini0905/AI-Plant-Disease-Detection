@@ -22,3 +22,4 @@ test/
 
 cnn_model.keras
 resnet50_final.keras
+efficientnet_final.keras
